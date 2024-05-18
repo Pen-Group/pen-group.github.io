@@ -1,1 +1,56 @@
-Hello Github World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pen-group.github.io/shared/css/defaultCSS.css">
+    <link rel="stylesheet" href="https://pen-group.github.io/shared/css/themes.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-light" style="background-color: var(--background-2); transition: all 100ms;">
+    <div class="penPlus-topBar">
+      <img class="penPlus-themes" id="theme-button" src="https://pen-group.github.io/shared/images/moon.svg" alt="">
+    </div>
+    <div style="position: absolute; top: 0px; left: 0px; width: 100%;height: 50%; background: var(--background-2); background: linear-gradient(0deg, var(--background-2) 0%, var(--background-1) 50%);">
+        <img src="https://pen-group.github.io/shared/images/pen.svg" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);">
+        <h1 style="position: absolute; top: 10%; left: 50%; transform: translate(-50%, -50%);">Welcome to Pen Group</h1>
+    </div>
+    <div class="pageContent">
+        <h2 class="centered">Rendering For Everyone!</h2>
+        <p>Pen Group is a project by a group of people who want to make advanced rendering more accessible and understandable.<br><br>
+        Projects here are mainly written for the begginner's programming language Scratch! 
+        Though some extend into GLSL and Javascript as well.<br><br>
+        Pen Group was originally started to hold the Pen+ Shader Editor.
+        </p>
+        <h2 class="centered">Why Scratch?</h2>
+        <p>Scratch is simple, yet it allows for so much freedom on the users end. Pen Group seeks to bridge the gap between graphics APIs, like webgl, and the blocks of scratch.</p>
+        <h2 class="centered">Want to contribute?</h2>
+        <p>Check out Pen Group's <a href="https://github.com/Pen-Group">Github</a>! There are a couple repositories there.</p><br><br>
+
+        <h2 class="centered">Done reading?<br>Check out some other pages here!</h2>
+        <div style="display: flex; width: 100%;">
+            <button style="width: 100%; margin: 8px;" onclick="window.location.href = 'https://pen-group.github.io/extensions/'">Extensions</button>
+            <button style="width: 100%; margin: 8px;" onclick="window.location.href = 'https://pen-group.github.io/featured/'">Featured Projects</button>
+            <button style="width: 100%; margin: 8px;" onclick="window.location.href = 'https://pen-group.github.io/docs/'">Documentation</button>
+
+            <script>
+                document.body.className = localStorage.getItem("theme") || "theme-dark";
+
+                document.getElementById("theme-button").onclick = () => {
+                    switch (document.body.className) {
+                    case "theme-light":
+                        document.body.className = "theme-dark";
+                        break;
+                    
+                    default:
+                        document.body.className = "theme-light";
+                        break;
+                    }
+                    localStorage.setItem("theme", document.body.className)
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>
